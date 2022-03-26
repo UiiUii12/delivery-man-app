@@ -4,6 +4,8 @@
         android:label="deliverymanapp"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyA6N-NIHdIWh6eSMspQxs8mEPRqIP6tmRQ"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

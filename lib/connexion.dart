@@ -3,6 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:deliverymanapp/recuperation.dart';
 import 'package:deliverymanapp/recuperation2.dart';
 import 'package:deliverymanapp/spalsh.dart';
+import 'package:deliverymanapp/commande.dart';
+import 'package:deliverymanapp/acceuil.dart';
+import 'package:deliverymanapp/livrer.dart';
 
 class Connexion extends StatefulWidget {
   const Connexion({Key? key}) : super(key: key);
@@ -186,7 +189,11 @@ class _ConnexionState extends State<Connexion> {
                                         width: 195.w,
                                         height: 42.h,
                                         child: ElevatedButton(
-                                          onPressed: () {},
+                                          onPressed: () {
+                                            Navigator.push(
+                                                context, MaterialPageRoute(
+                                                builder: (context) => Livrer()));
+                                          },
                                           child: Text('Se connecter',
                                               style: TextStyle(
                                                 fontSize: 16.sp,

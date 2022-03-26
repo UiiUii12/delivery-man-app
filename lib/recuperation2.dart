@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:deliverymanapp/recuperation.dart';
+import 'package:deliverymanapp/acceuil.dart';
 class Recuperation2 extends StatefulWidget {
   const Recuperation2({Key? key}) : super(key: key);
 
@@ -193,7 +194,9 @@ class _Recuperation2State extends State<Recuperation2> {
                                         width: 195.w,
                                         height: 42.h,
                                         child: ElevatedButton.icon(
-                                          onPressed: () {},
+                                          onPressed: () {Navigator.push(
+                                              context, MaterialPageRoute(
+                                              builder: (context) => Acceuil()));},
                                           icon: Icon(
                                             Icons.arrow_forward,
                                             color: Colors.white,
