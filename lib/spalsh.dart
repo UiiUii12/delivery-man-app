@@ -1,12 +1,6 @@
 import 'package:deliverymanapp/connexion.dart';
-import 'package:deliverymanapp/recuperation.dart';
-import 'package:deliverymanapp/recuperation2.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'main.dart';
-import 'dart:async';
-import 'package:flutter/material.dart';
-
 class SplachScreen extends StatefulWidget {
   @override
   _SplachScreenState createState() => _SplachScreenState();

@@ -1,13 +1,7 @@
-import 'package:deliverymanapp/connexion.dart';
 import 'package:deliverymanapp/spalsh.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:deliverymanapp/connexion.dart';
-import 'package:deliverymanapp/recuperation.dart';
-import 'package:deliverymanapp/recuperation2.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 void main() {
   runApp(const MyApp());

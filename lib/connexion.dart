@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:deliverymanapp/recuperation.dart';
-import 'package:deliverymanapp/recuperation2.dart';
-import 'package:deliverymanapp/spalsh.dart';
-import 'package:deliverymanapp/commande.dart';
 import 'package:deliverymanapp/acceuil.dart';
-import 'package:deliverymanapp/livrer.dart';
+
 
 class Connexion extends StatefulWidget {
   const Connexion({Key? key}) : super(key: key);
@@ -98,7 +95,7 @@ class _ConnexionState extends State<Connexion> {
                                                       EdgeInsets.all(10.0.h),
                                                   counterText: "",
                                                   border: InputBorder.none,
-                                                  hintText: 'ID',
+                                                  hintText: 'Email',
                                                   hintStyle: TextStyle(
                                                     fontSize: 15.sp,
                                                     fontFamily: 'Poppins',
@@ -109,7 +106,7 @@ class _ConnexionState extends State<Connexion> {
                                                 ),
                                                 maxLength: 5,
                                                 keyboardType:
-                                                    TextInputType.number,
+                                                    TextInputType.emailAddress,
                                                 textInputAction:
                                                     TextInputAction.next,
                                               ),
@@ -192,7 +189,7 @@ class _ConnexionState extends State<Connexion> {
                                           onPressed: () {
                                             Navigator.push(
                                                 context, MaterialPageRoute(
-                                                builder: (context) => Livrer()));
+                                                builder: (context) => Acceuil(etape: 'Accune commande'  ,  )));
                                           },
                                           child: Text('Se connecter',
                                               style: TextStyle(

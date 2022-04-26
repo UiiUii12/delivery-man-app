@@ -1,6 +1,5 @@
-import 'package:deliverymanapp/recuperation2.dart';
+
 import 'package:flutter/material.dart';
-import 'package:responsive_framework/responsive_framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:deliverymanapp/connexion.dart';
 
@@ -81,7 +80,7 @@ class Recuperation extends StatelessWidget {
                           children: [
                             SizedBox(
                               //le premier espace
-                              height: 15.h,
+                              height: 50.h,
                             ),
                             Container(
                                 padding: EdgeInsets.symmetric(horizontal: 30.w),
@@ -97,32 +96,28 @@ class Recuperation extends StatelessWidget {
                                             child: Container(
                                               width: 260.w,
                                               height: 40.h,
-                                              alignment: Alignment.center,
                                               color: Colors.transparent,
                                               child: TextFormField(
-                                                textAlign: TextAlign.center,
                                                 //lgris lewel
                                                 decoration: InputDecoration(
                                                   contentPadding:
-                                                      EdgeInsets.only(
-                                                          bottom: 10.h),
+                                                  EdgeInsets.all(10.0.h),
                                                   counterText: "",
                                                   border: InputBorder.none,
-                                                  hintText:
-                                                      'Numéro de téléphone',
+                                                  hintText: 'Adresse email',
                                                   hintStyle: TextStyle(
-                                                    fontSize: 13.sp,
+                                                    fontSize: 15.sp,
                                                     fontFamily: 'Poppins',
                                                     color: Colors.grey[500],
                                                   ),
                                                   fillColor: Color(0xffF6F6F6),
                                                   filled: true,
                                                 ),
-                                                maxLength: 10,
+                                                maxLength: 5,
                                                 keyboardType:
-                                                    TextInputType.number,
+                                                TextInputType.emailAddress,
                                                 textInputAction:
-                                                    TextInputAction.next,
+                                                TextInputAction.next,
                                               ),
                                             ),
                                           ),
@@ -130,59 +125,28 @@ class Recuperation extends StatelessWidget {
                                             //troisieme espace
                                             height: 15.h,
                                           ),
-                                          Center(
-                                            child: Container(
-                                              //lgris deuxieme
-                                              width: 200.w,
-                                              height: 72.h,
-                                              color: Colors.transparent,
-                                              child: TextFormField(
-                                                textAlign: TextAlign.center,
-                                                decoration: InputDecoration(
-                                                  counterText: "",
-                                                  border: InputBorder.none,
-                                                  hintText: '######',
-                                                  hintStyle: TextStyle(
-                                                    fontSize: 20.sp,
-                                                    fontFamily: 'Poppins',
-                                                    color: Colors.grey[500],
-                                                  ),
-                                                  fillColor: Color(0xffF6F6F6),
-                                                  filled: true,
-                                                ),
-                                                textInputAction:
-                                                    TextInputAction.done,
-                                                maxLength: 6,
-                                                keyboardType:
-                                                    TextInputType.number,
-                                              ),
-                                            ),
-                                          ),
+
                                           SizedBox(
                                             //troisieme espace
                                             height: 15.h,
                                           ),
                                         ]),
                                     SizedBox(
-                                      height: 15.h,
+                                      height: 40.h,
                                     ),
                                     Container(
                                       //lbutton
                                       color: Colors.transparent,
                                       child: SizedBox(
-                                        width: 208.w,
-                                        height: 45.h,
-                                        child: ElevatedButton.icon(
+                                        width: 200.w,
+                                        height: 40.h,
+                                        child: ElevatedButton(
                                           onPressed: () {
                                             Navigator.push(
                                                 context, MaterialPageRoute(
-                                                builder: (context) => Recuperation2()));
+                                                builder: (context) => Connexion()));
                                           },
-                                          icon: Icon(
-                                            Icons.arrow_forward,
-                                            color: Colors.white,
-                                          ),
-                                          label: Text('Poursuivre',
+                                          child: Text('envoyer le code',
                                               textScaleFactor: 0.96.sp,
                                               style: TextStyle(
                                                 fontSize: 20.sp,
