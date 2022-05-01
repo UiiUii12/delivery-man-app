@@ -11,6 +11,8 @@ class Done extends StatefulWidget {
 class _DoneState extends State<Done> {
   @override
   Widget build(BuildContext context) {
+    double WidthSize = MediaQuery.of(context).size.width;
+    double HeightSize = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xffb80000),
@@ -20,8 +22,8 @@ class _DoneState extends State<Done> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 160.h,
-                  width: 120.w,
+                  height: HeightSize*(160.h/803.63).h,
+                  width:WidthSize*(120.w/392.72).w,
                   child: Container(
                     decoration: BoxDecoration(
                       image: DecorationImage(
@@ -33,11 +35,11 @@ class _DoneState extends State<Done> {
               ],
             ),
             SizedBox(
-              height:20.h ,
+              height: HeightSize*(20.h/803.63).h,
             ),
             SizedBox(
-              height: 160.h,
-             width: 300.w,
+              height: HeightSize*(160.h/803.63).h,
+             width:WidthSize*(300.w/392.72).w,
               child: Container(
                 decoration: BoxDecoration(
                   image: DecorationImage(
@@ -48,25 +50,25 @@ class _DoneState extends State<Done> {
             ),
 
             SizedBox(
-              height: 40.h,
+              height: HeightSize*(40.h/803.63).h,
             ),
             Container(
               //
               color: Colors.transparent,
               child: SizedBox(
-                width: 195.w,
-                height: 50.h,
+                width:WidthSize*(195.w/392.72).w,
+                height: HeightSize*(50.h/803.63).h,
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
                         context, MaterialPageRoute(
-                      builder: (context) =>Acceuil(etape: 'Accune commande'  ,  ),));
+                      builder: (context) =>Acceuil(etape: 'aucune commande'  ,  ),));
                   },
                   child: Text('C\'est parti',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontFamily: 'Poppins',
-                        fontSize: 16.sp,
+                        fontSize: WidthSize*(16.sp/392.72),
                         color: Colors.black,
                       )),
                   style: ElevatedButton.styleFrom(
@@ -77,21 +79,21 @@ class _DoneState extends State<Done> {
               ),
             ),
             SizedBox(
-              height: 20.h,
+              height: HeightSize*(20.h/803.63).h,
             ),
             Container(
               //
               color: Colors.transparent,
               child: SizedBox(
-                width: 195.w,
-                height: 50.h,
+                width:WidthSize*(195.w/392.72).w,
+                height:  HeightSize*(50.h/803.63).h,
                 child: ElevatedButton(
                   onPressed: () {},//envoyer le signal a l'administration
                   child: Text('Problème !',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontFamily: 'Poppins',
-                        fontSize: 16.sp,
+                        fontSize: WidthSize*(16.sp/392.72),
                         color: Color(0xffb80000),
                       )),
                   style: ElevatedButton.styleFrom(
@@ -102,10 +104,10 @@ class _DoneState extends State<Done> {
               ),
             ),
             SizedBox(
-              height:100.h,
+              height: HeightSize*(100.h/803.63).h,
             ),
             SizedBox(
-              height: 160.h,
+              height: HeightSize*(160.h/803.63).h,
               //width: 320.w,
               child: Container(
                 decoration: BoxDecoration(

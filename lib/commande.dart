@@ -22,14 +22,16 @@ class _commandeState extends State<commande> {
   ];
   @override
   Widget build(BuildContext context) {
+    double WidthSize = MediaQuery.of(context).size.width;
+    double HeightSize = MediaQuery.of(context).size.height;
     return SafeArea(child: Scaffold (
       body: Stack(
         children: [
           Acceuil(etape: 'La commande'  , destination: GoToClient(), ),
           Container(
               margin: EdgeInsets.fromLTRB(15.w, 350.h, 15.w, 47.h),
-              height: 350.h,
-              width: 330.w,
+              height:HeightSize*(350.h/803.63),
+              width:  WidthSize*(330.w/392.72),
               decoration: BoxDecoration(
                   color: Color(0xb3C4C4C4),
                   borderRadius: BorderRadius.circular(28.w)),
@@ -44,8 +46,8 @@ class _commandeState extends State<commande> {
                     decoration: BoxDecoration(
                         color: Color(0xffF9F8F8),
                         borderRadius: BorderRadius.circular(28.w)),
-                    height: 75.h,
-                    width: 302.w,
+                    height:HeightSize*(75.h/803.63),
+                    width: WidthSize*(302.w/392.72),
                     child:
                     Row(
                         mainAxisSize: MainAxisSize.max,
@@ -56,8 +58,8 @@ class _commandeState extends State<commande> {
                                 color: Colors.transparent,
                                 borderRadius: BorderRadius.circular(28.w)),
                             // alignment: Alignment.topCenter,
-                            height: 70.h,
-                            width: 180.w,
+                            height:HeightSize*(70.h/803.63),
+                            width: WidthSize*(180.w/392.72),
                             child:
                             Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -70,7 +72,7 @@ class _commandeState extends State<commande> {
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold,
 
-                                        fontSize: 15.sp,
+                                        fontSize: WidthSize*(15.sp/392.72),
                                       )),
                                 ),
                               ],
@@ -87,7 +89,7 @@ class _commandeState extends State<commande> {
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
 
-                                  fontSize: 15.sp,)),
+                                  fontSize:  WidthSize*(15.sp/392.72),)),
                           ),
                           ),
 

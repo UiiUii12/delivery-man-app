@@ -8,6 +8,7 @@ class historiques extends StatefulWidget {
 }
 
 class _historiquesState extends State<historiques> {
+
   List<Map<String, String>> historique = [
     { 'Ncommande' : 'Commande 1' , 'date': '2022 03 26' , 'time' : '16:41'},
     { 'Ncommande' : 'Commande 3' , 'date': '2022 03 26' , 'time' : '17:41'},
@@ -24,6 +25,8 @@ class _historiquesState extends State<historiques> {
   ];
   @override
   Widget build(BuildContext context) {
+    double WidthSize = MediaQuery.of(context).size.width;
+    double HeightSize = MediaQuery.of(context).size.height;
     return SafeArea(child: Scaffold (
       appBar : AppBar(
         title: Row(
@@ -33,7 +36,7 @@ class _historiquesState extends State<historiques> {
                   style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'Poppins',
-                  fontSize: 18.sp ,
+                  fontSize: WidthSize*(18.sp/392.72) ,
                   fontWeight: FontWeight.bold ,
              ),
             ),
@@ -44,7 +47,7 @@ class _historiquesState extends State<historiques> {
       body:
       Column(
         children: [
-          SizedBox( height: 10.h,) ,
+          SizedBox( height: 0.h,) ,
           /* Padding(
             padding:  EdgeInsets.only(left: 10.w , right: 200.w),
             child: Text (
@@ -59,8 +62,9 @@ class _historiquesState extends State<historiques> {
           ),*/
           Container(
             margin: EdgeInsets.fromLTRB(15.w, 10.h, 15.w, 0.h),
-            height: (MediaQuery.of(context).size.height-10.h-AppBar().preferredSize.height-0.07*MediaQuery.of(context).size.height).h,
-            width: 350.w,
+            height: MediaQuery.of(context).size.height - (10.h+MediaQuery.of(context).padding.bottom +
+              MediaQuery.of(context).padding.top+AppBar().preferredSize.height) ,
+            width: WidthSize*(350.w/392.72),
             color: Colors.transparent,
             child: ListView.builder(
                 itemCount:historique.length ,
@@ -71,8 +75,8 @@ class _historiquesState extends State<historiques> {
                   return Column(
                     children: [
                       Container(
-                        height:65.h ,
-                        width: 350.w ,
+                        height:HeightSize*(65.h/803.63) ,
+                        width: WidthSize*(350.w/392.72),
                         color: Color(0xb3C4C4C4),
                         child: Column(
                           children: [
@@ -88,7 +92,7 @@ class _historiquesState extends State<historiques> {
                                         color: Colors.black,
                                         fontFamily: 'Poppins',
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 10.sp ,
+                                        fontSize:WidthSize*(12.sp/392.72),
                                       ),
                                     ),
                                   ),
@@ -102,7 +106,7 @@ class _historiquesState extends State<historiques> {
                                         color: Colors.black,
                                         fontFamily: 'Poppins',
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 10.sp ,
+                                        fontSize: WidthSize*(10.sp/392.72) ,
                                       ),
                                     ),
                                   ),
@@ -118,7 +122,7 @@ class _historiquesState extends State<historiques> {
                                   color: Colors.black,
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 10.sp ,
+                                  fontSize:WidthSize*(10.sp/392.72),
                                 ),
                               ),
                             ),
@@ -128,7 +132,7 @@ class _historiquesState extends State<historiques> {
 
 
                       ),
-                      SizedBox(height: 10.h,),
+                      SizedBox(height: HeightSize*(10.h/803.63),),
                     ],
                   );
                 }),

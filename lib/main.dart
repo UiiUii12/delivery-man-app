@@ -22,6 +22,7 @@ class _MyAppState extends State<MyApp> {
       minTextAdapt: true,
       splitScreenMode: true,
 
+
       builder: () => MaterialApp(
         debugShowCheckedModeBanner: false, // no more debug
         home: SplachScreen(),

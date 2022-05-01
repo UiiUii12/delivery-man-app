@@ -8,6 +8,8 @@ class Recuperation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double WidthSize = MediaQuery.of(context).size.width;
+    double HeightSize = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Stack(children: [
         Container(
@@ -43,14 +45,14 @@ class Recuperation extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.fromLTRB(30.w, 100.h, 38.w, 50.h),
                         child: Container(
-                          height: 80.h,
-                          width: 283.w,
+                          height: HeightSize*(80.h/803.63).h,
+                          width: WidthSize*(283.w/392.72).w,
                           child: Center(
                             child: Text('Récupération',
                                 textScaleFactor: 0.96.sp,
                                 style: TextStyle(
                                   fontFamily: 'Poppins',
-                                  fontSize: 40.sp,
+                                  fontSize: WidthSize*(40.sp/392.72),
                                   color: Colors.black,
                                 )),
                           ),
@@ -58,12 +60,12 @@ class Recuperation extends StatelessWidget {
                       ),
                       Container(
                         //container card
-                        width: 300.w,
-                        height: 288.h,
+                        width: WidthSize*(300.w/392.72).w,
+                        height:HeightSize*(288.h/803.63).h,
                         decoration: BoxDecoration(
                             border: Border.all(
                               color: Colors.grey,
-                              width: 0.1.w,
+                              width: WidthSize*(0.1.w/392.72).w,
                             ),
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(12),
@@ -80,7 +82,7 @@ class Recuperation extends StatelessWidget {
                           children: [
                             SizedBox(
                               //le premier espace
-                              height: 50.h,
+                              height:HeightSize*(50.h/803.63).h,
                             ),
                             Container(
                                 padding: EdgeInsets.symmetric(horizontal: 30.w),
@@ -94,8 +96,8 @@ class Recuperation extends StatelessWidget {
                                             padding: EdgeInsets.symmetric(
                                                 vertical: 14.h),
                                             child: Container(
-                                              width: 260.w,
-                                              height: 40.h,
+                                              width: WidthSize*(260.w/392.72).w,
+                                              height:HeightSize*(40.h/803.63).h,
                                               color: Colors.transparent,
                                               child: TextFormField(
                                                 //lgris lewel
@@ -106,50 +108,47 @@ class Recuperation extends StatelessWidget {
                                                   border: InputBorder.none,
                                                   hintText: 'Adresse email',
                                                   hintStyle: TextStyle(
-                                                    fontSize: 15.sp,
+                                                    fontSize:WidthSize*(15.sp/392.72),
                                                     fontFamily: 'Poppins',
                                                     color: Colors.grey[500],
                                                   ),
                                                   fillColor: Color(0xffF6F6F6),
                                                   filled: true,
                                                 ),
-                                                maxLength: 5,
                                                 keyboardType:
                                                 TextInputType.emailAddress,
-                                                textInputAction:
-                                                TextInputAction.next,
+                                                textInputAction: TextInputAction.next,
                                               ),
                                             ),
                                           ),
                                           SizedBox(
                                             //troisieme espace
-                                            height: 15.h,
+                                            height: HeightSize*(15.h/803.63).h,
                                           ),
 
                                           SizedBox(
                                             //troisieme espace
-                                            height: 15.h,
+                                            height:HeightSize*(15.h/803.63).h,
                                           ),
                                         ]),
                                     SizedBox(
-                                      height: 40.h,
+                                      height:HeightSize*(40.h/803.63).h,
                                     ),
                                     Container(
                                       //lbutton
                                       color: Colors.transparent,
                                       child: SizedBox(
-                                        width: 200.w,
-                                        height: 40.h,
+                                        width: WidthSize*(200.w/392.72).w,
+                                        height:HeightSize*(40.h/803.63).h,
                                         child: ElevatedButton(
                                           onPressed: () {
                                             Navigator.push(
                                                 context, MaterialPageRoute(
                                                 builder: (context) => Connexion()));
                                           },
-                                          child: Text('envoyer le code',
-                                              textScaleFactor: 0.96.sp,
+                                          child: Text('envoyer le lien',
                                               style: TextStyle(
-                                                fontSize: 20.sp,
+                                                fontSize: WidthSize*(20.sp/392.72),
                                                 color: Colors.white,
                                               )),
                                           style: ElevatedButton.styleFrom(
@@ -161,7 +160,7 @@ class Recuperation extends StatelessWidget {
                                     ),
                                     SizedBox(
                                       //cienquiéme espace
-                                      height: 15.h,
+                                      height:HeightSize*(15.h/803.63).h,
                                     ),
                                   ],
                                 )), //container lbyadh

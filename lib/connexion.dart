@@ -14,8 +14,11 @@ class Connexion extends StatefulWidget {
 class _ConnexionState extends State<Connexion> {
   bool _secureText = true;
 
+
   @override
   Widget build(BuildContext context) {
+    double WidthSize = MediaQuery.of(context).size.width;
+    double HeightSize = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Stack(children: [
         Container(
@@ -34,23 +37,27 @@ class _ConnexionState extends State<Connexion> {
                       Padding(
                         padding: EdgeInsets.fromLTRB(30.w, 100.h, 38.w, 50.h),
                         child: Container(
-                          height: 80.h,
-                          width: 283.w,
+                          height: HeightSize*(80.h/803.63).h,
+                          width: WidthSize*(283.w/392.72).w,
                           child: Center(
-                            child: Text('Se connecter',
-                                textScaleFactor: 0.96.sp,
-                                style: TextStyle(
-                                  fontFamily: 'Poppins',
-                                  fontSize: 40.sp,
-                                  color: Colors.black,
-                                )),
+                            child: Container(
+                              height:HeightSize*(60.h/803.63).h,
+                              child: FittedBox(
+                                child: Text('Se connecter',
+                                    style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontSize: WidthSize*(40.sp/392.72),
+                                      color: Colors.black,
+                                    )),
+                              ),
+                            ),
                           ),
                         ),
                       ),
                       Container(
                         //container card
-                        width: 300.w,
-                        height: 288.h,
+                        width: WidthSize*(300.w/392.72).w,
+                        height:  HeightSize*(288.h/803.63).h,
                         decoration: BoxDecoration(
                             border: Border.all(
                               color: Colors.grey,
@@ -71,7 +78,7 @@ class _ConnexionState extends State<Connexion> {
                           children: [
                             SizedBox(
                               //le premier espace
-                              height: 15.h,
+                              height:  HeightSize*(15.h/803.63).h,
                             ),
                             Container(
                                 padding: EdgeInsets.symmetric(horizontal: 20.w),
@@ -85,8 +92,8 @@ class _ConnexionState extends State<Connexion> {
                                             padding: EdgeInsets.symmetric(
                                                 vertical: 14.h, horizontal: 0.w),
                                             child: Container(
-                                              width: 260.w,
-                                              height: 40.h,
+                                              width:WidthSize*(260.w/392.72).w,
+                                              height:  HeightSize*(40.h/803.63).h,
                                               color: Colors.transparent,
                                               child: TextFormField(
                                                 //lgris lewel
@@ -97,29 +104,26 @@ class _ConnexionState extends State<Connexion> {
                                                   border: InputBorder.none,
                                                   hintText: 'Email',
                                                   hintStyle: TextStyle(
-                                                    fontSize: 15.sp,
+                                                    fontSize: WidthSize*(15.sp/392.72),
                                                     fontFamily: 'Poppins',
                                                     color: Colors.grey[500],
                                                   ),
                                                   fillColor: Color(0xffF6F6F6),
                                                   filled: true,
                                                 ),
-                                                maxLength: 5,
-                                                keyboardType:
-                                                    TextInputType.emailAddress,
-                                                textInputAction:
-                                                    TextInputAction.next,
+                                                keyboardType: TextInputType.emailAddress,
+                                                textInputAction: TextInputAction.next,
                                               ),
                                             ),
                                           ),
                                           SizedBox(
                                             //troisieme espace
-                                            height: 15.h,
+                                            height:HeightSize*(15.h/803.63).h,
                                           ),
                                           Container(
                                             //lgris deuxieme
-                                            width: 260.w,
-                                            height: 40.h,
+                                            width:WidthSize*(260.w/392.72).w,
+                                            height:   HeightSize*(40.h/803.63).h,
                                             color: Colors.transparent,
                                             child: TextFormField(
                                               textAlign: TextAlign.left,
@@ -144,7 +148,7 @@ class _ConnexionState extends State<Connexion> {
                                                 hintStyle: TextStyle(
                                                   fontFamily: 'Poppins',
                                                   color: Colors.grey[500],
-                                                  fontSize: 15.sp,
+                                                  fontSize: WidthSize*(15.sp/392.72),
                                                 ),
                                                 fillColor: Color(0xffF6F6F6),
                                                 filled: true,
@@ -157,7 +161,7 @@ class _ConnexionState extends State<Connexion> {
                                           ),
                                           SizedBox(
                                             //troisieme espace
-                                            height: 3.h,
+                                            height:HeightSize*(4.h/803.63).h,
                                           ),
                                           TextButton(
                                             onPressed: () {
@@ -169,7 +173,7 @@ class _ConnexionState extends State<Connexion> {
                                               'Mot de passe oublié?',
                                               style: TextStyle(
                                                 color: Colors.black,
-                                                fontSize: 12.sp,
+                                                fontSize:WidthSize*(12.sp/392.72),
                                                 decoration:
                                                     TextDecoration.underline,
                                               ),
@@ -177,23 +181,23 @@ class _ConnexionState extends State<Connexion> {
                                           ),
                                         ]),
                                     SizedBox(
-                                      height: 18.h,
+                                      height: HeightSize*(18.h/803.63).h,
                                     ),
                                     Container(
                                       //
                                       color: Colors.transparent,
                                       child: SizedBox(
-                                        width: 195.w,
-                                        height: 42.h,
+                                        width: WidthSize*(195.w/392.72).w,
+                                        height: HeightSize*(42.h/803.63).h,
                                         child: ElevatedButton(
                                           onPressed: () {
                                             Navigator.push(
                                                 context, MaterialPageRoute(
-                                                builder: (context) => Acceuil(etape: 'Accune commande'  ,  )));
+                                                builder: (context) => Acceuil(etape: 'aucune commande'  ,  )));
                                           },
                                           child: Text('Se connecter',
                                               style: TextStyle(
-                                                fontSize: 16.sp,
+                                                fontSize: WidthSize*(16.sp/392.72),
                                                 color: Colors.white,
                                               )),
                                           style: ElevatedButton.styleFrom(
@@ -205,7 +209,7 @@ class _ConnexionState extends State<Connexion> {
                                     ),
                                     SizedBox(
                                       //cienquiéme espace
-                                      height: 15.h,
+                                      height: HeightSize*(15.h/803.63).h,
                                     ),
                                   ],
                                 )), //container lbyadh

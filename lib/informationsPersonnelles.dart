@@ -9,13 +9,13 @@ import 'dart:io';
 //import 'package:intl/intl.dart';
 import 'package:deliverymanapp/historiques.dart';
 import 'package:deliverymanapp/acceuil.dart';
-class profile extends StatefulWidget {
-  const profile ({Key? key}) : super(key: key);
+class InfoPerso extends StatefulWidget {
+  const InfoPerso ({Key? key}) : super(key: key);
   @override
-  State<profile> createState() => _profileState();
+  State<InfoPerso> createState() => _InfoPersoState();
 }
 
-class _profileState extends State<profile> {
+class _InfoPersoState extends State<InfoPerso> {
   List<Map<String, String>> livreur = [
     {'ID': '46837', 'Nom': 'Nedjaa' , 'Prenom':'Ines' , 'phone_number':'0698723458'},
     {'ID': '65827', 'Nom': 'Kara' , 'Prenom':'Yasmine' , 'phone_number':'0698723458'},
@@ -40,6 +40,8 @@ class _profileState extends State<profile> {
   final ImagePicker picker = ImagePicker();
   @override
   Widget build(BuildContext context) {
+    double WidthSize = MediaQuery.of(context).size.width;
+    double HeightSize = MediaQuery.of(context).size.height;
     final livI = livreur[0]['ID'];
     final livN = livreur[0]['Nom'];
     final livP = livreur[0]['Prenom'];
@@ -79,7 +81,7 @@ class _profileState extends State<profile> {
                     Column(
                         children: [
                           SizedBox(
-                            height:90.h,
+                            height:(HeightSize*(90.h/803.63)),
                           ),
 
 
@@ -89,27 +91,27 @@ class _profileState extends State<profile> {
                             children: [
                               ImageProfile(),
                             ]),
-                          SizedBox(height: 20.h,),
+                          SizedBox(height: HeightSize*(20.h/803.63),),
                           Text('Nedjaa Ines',
                           style:TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 20.sp,
+                            fontSize: WidthSize*(20.sp/392.72),
                           )),
                           SizedBox(
-                            height:50.h ,
+                            height:HeightSize*(50.h/803.63) ,
                           ),
                           Card(
 
                             child:SizedBox(
-                              height: MediaQuery.of(context).size.height*(1/16),
-                              width: MediaQuery.of(context).size.width*(7/9),
+                              height: HeightSize*(50.23.h/803.63) ,
+                              width: WidthSize*(305.45.h/392.72) ,
                               child: Row(
                                 children: [
                                   Text(' '),
                                   Icon(
                                       MdiIcons.account,
                                       color: Colors.black,
-                                      size: 25.sp,
+                                      size: WidthSize*(25.sp/392.72),
                                     ),
                                   Text('  $livN'+' '+'$livP',
                                     style: TextStyle(fontFamily: 'Poppins',
@@ -120,20 +122,20 @@ class _profileState extends State<profile> {
                           ),
 
                           SizedBox(
-                            height: 15.h,
+                            height:HeightSize*(15.h/803.63),
                           ),
                           Card(
 
                               child:SizedBox(
-                                height: MediaQuery.of(context).size.height*(1/16),
-                                width: MediaQuery.of(context).size.width*(7/9),
+                                height: HeightSize*(50.23.h/803.63) ,
+                                width: WidthSize*(305.45.h/392.72) ,
                                 child: Row(
                                   children: [
                                     Text(' '),
                                     Icon(
                                       MdiIcons.email,
                                       color: Colors.black,
-                                      size: 25.sp,
+                                      size:WidthSize*(25.sp/392.72),
                                     ),
                                     Text(' i.nedjaa@gmail.com',
                                       style: TextStyle(fontFamily: 'Poppins',
@@ -144,20 +146,20 @@ class _profileState extends State<profile> {
                           ),
 
                           SizedBox(
-                            height: 15.h,
+                            height: HeightSize*(15.h/803.63),
                           ),
                           Card(
 
                               child:SizedBox(
-                                height: MediaQuery.of(context).size.height*(1/16),
-                                width: MediaQuery.of(context).size.width*(7/9),
+                                height: HeightSize*(50.23.h/803.63) ,
+                                width: WidthSize*(305.45.h/392.72) ,
                                 child: Row(
                                   children: [
                                     Text(' '),
                                     Icon(
                                       MdiIcons.phone,
                                       color: Colors.black,
-                                      size: 25.sp,
+                                      size:WidthSize*(25.sp/392.72),
                                     ),
                                     Text('  '+'$livPh',
                                       style: TextStyle(fontFamily: 'Poppins',
@@ -167,20 +169,20 @@ class _profileState extends State<profile> {
                               )
                           ),
                           SizedBox(
-                            height: 15.h,
+                            height: HeightSize*(15.h/803.63),
                           ),
                           Card(
 
                               child:SizedBox(
-                                height: MediaQuery.of(context).size.height*(1/16),
-                                width: MediaQuery.of(context).size.width*(7/9),
+                                height: HeightSize*(50.23.h/803.63) ,
+                                width: WidthSize*(305.45.h/392.72) ,
                                 child: Row(
                                   children: [
                                     Text(' '),
                                     Icon(
                                       MdiIcons.identifier,
                                       color: Colors.black,
-                                      size: 25.sp,
+                                      size:WidthSize*(25.sp/392.72),
                                     ),
                                     GestureDetector(
                                       onTap: (){
@@ -193,11 +195,12 @@ class _profileState extends State<profile> {
                                       fontWeight: FontWeight.bold),),
                                     )
                                   ],
+
                                 ),
                               )
                           ),
                           SizedBox(
-                            height: 100.h,
+                            height:HeightSize*(100.h/803.63),
                           ),
                         ]),
 
@@ -207,20 +210,22 @@ class _profileState extends State<profile> {
 
   }
   Widget ImageProfile (){
+    double WidthSize=MediaQuery.of(context).size.width;
+    double HeightSize=MediaQuery.of(context).size.height;
     return Center(
       child:
       Stack (
         children: [
           CircleAvatar(
-            radius: 50.sp,
+            radius: WidthSize*(50.sp/392.72),
             backgroundImage:
             _imageFile == null ?
             AssetImage("images/pic.jpg")
                 : FileImage(File(_imageFile.path)) as ImageProvider,
           ),
           Positioned(
-            right: 5.w ,
-            bottom: 5.h,
+            right: WidthSize*(5.w/392.72) ,
+            bottom: HeightSize*(5.h/803.63),
 
             child:
             Material (
@@ -236,12 +241,12 @@ class _profileState extends State<profile> {
                 },
                 child:
                 CircleAvatar(
-                  radius: 15.sp,
+                  radius: WidthSize*(15.sp/392.72),
                   backgroundColor:Colors.grey ,
                   child: Icon(
                     Icons.camera_alt ,
                     color: Colors.black,
-                    size: 15.sp,
+                    size: WidthSize*(15.sp/392.72),
                   ),
                 ),
 
@@ -255,9 +260,11 @@ class _profileState extends State<profile> {
   }
   Widget change (){
 
+    double WidthSize=MediaQuery.of(context).size.width;
+    double HeightSize=MediaQuery.of(context).size.height;
     return
       Container(
-        height: 200.h,
+        height: HeightSize*(200.h/803.63),
         margin: EdgeInsets.symmetric(horizontal: 5.w),
         // decoration: BoxDecoration(
         //   color: Colors.black12),
@@ -266,20 +273,20 @@ class _profileState extends State<profile> {
         Column (
           children: [
             SizedBox(
-              height: 15.h,
+              height: HeightSize*(15.h/803.63),
             ),
 
             Text("Changer votre photo de profile",
               style: TextStyle(
                 fontFamily: 'Poppins',
-                fontSize: 18.sp,
+                fontSize: WidthSize*(18.sp/392.72),
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
 
             ),
             SizedBox(
-              height: 12.h,
+              height:  HeightSize*(12.h/803.63),
             ),
             Row(
               children: [
@@ -288,11 +295,11 @@ class _profileState extends State<profile> {
                       pickpicture(ImageSource.camera);
                     },
                     icon: Icon(Icons.camera_alt_outlined,
-                      size: 18.sp,
+                      size: WidthSize*(18.sp/392.72),
 
                     )),
                 SizedBox(
-                  width: 4.w,
+                  width: WidthSize*(4.w/392.72),
 
                 ),
                 GestureDetector(
@@ -300,7 +307,7 @@ class _profileState extends State<profile> {
                   child: Text("Prendre une photo",
                     style: TextStyle(
                       fontFamily: 'Poppins',
-                      fontSize: 13.sp,
+                      fontSize: WidthSize*(13.sp/392.72),
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                     ),
@@ -309,7 +316,7 @@ class _profileState extends State<profile> {
 
               ],),
             SizedBox(
-              height: 4.h,
+              height: HeightSize*(4.h/803.63),
             ),
             Row(
 
@@ -320,11 +327,11 @@ class _profileState extends State<profile> {
                         pickpicture(ImageSource.gallery);
                       },
                       icon: Icon(Icons.image,
-                        size: 18.sp,
+                        size: WidthSize*(18.sp/392.72),
 
                       )),
                   SizedBox(
-                    width: 4.w,
+                    width: WidthSize*(4.w/392.72),
 
                   ),
                   GestureDetector(
@@ -332,7 +339,7 @@ class _profileState extends State<profile> {
                     child: Text("importer une photo",
                       style: TextStyle(
                         fontFamily: 'Poppins',
-                        fontSize: 13.sp,
+                        fontSize: WidthSize*(13.sp/392.72),
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
                       ),
